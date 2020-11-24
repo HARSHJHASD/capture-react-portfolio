@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/claytonseraphin/react-capture-portfolio/static/js/main.1154838a.chunk.js",
+    "main.js.map": "/claytonseraphin/react-capture-portfolio/static/js/main.1154838a.chunk.js.map",
+    "runtime-main.js": "/claytonseraphin/react-capture-portfolio/static/js/runtime-main.13cf4442.js",
+    "runtime-main.js.map": "/claytonseraphin/react-capture-portfolio/static/js/runtime-main.13cf4442.js.map",
+    "static/js/2.a4612141.chunk.js": "/claytonseraphin/react-capture-portfolio/static/js/2.a4612141.chunk.js",
+    "static/js/2.a4612141.chunk.js.map": "/claytonseraphin/react-capture-portfolio/static/js/2.a4612141.chunk.js.map",
+    "static/js/3.ae0f20fb.chunk.js": "/claytonseraphin/react-capture-portfolio/static/js/3.ae0f20fb.chunk.js",
+    "static/js/3.ae0f20fb.chunk.js.map": "/claytonseraphin/react-capture-portfolio/static/js/3.ae0f20fb.chunk.js.map",
+    "index.html": "/claytonseraphin/react-capture-portfolio/index.html",
+    "static/js/2.a4612141.chunk.js.LICENSE.txt": "/claytonseraphin/react-capture-portfolio/static/js/2.a4612141.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.13cf4442.js",
+    "static/js/2.a4612141.chunk.js",
+    "static/js/main.1154838a.chunk.js"
+  ]
+}
