@@ -1,49 +1,81 @@
 import React from 'react';
 //import pages
 import AboutUs from '../pages/AboutUs';
+//import styled components
+import styled from 'styled-components';
+//import from styles
+import {StyledAbout} from '../styles'
+//import Toggle;
+import Toggle from './toggle';
+//import AnimateSharedLayout
+import {AnimateSharedLayout} from 'framer-motion';
 
 const FaqSection = () => {
     return (
-        <div className="faq">
+        <StyledFAQ>
             <h2>Any Questions <span>FAQ</span></h2>
-            <div className="question">
-                <h4>How do i start?</h4>
-                <div className="answer">
-                    <p>
-                        Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula
-                        elementum sed sit amet dui. Sed porttitor lectus nibh.
-                    </p>
-                </div>
-            </div>
-            <div className="question">
-                <h4>Dayli Schedule</h4>
-                <div className="answer">
-                    <p>
-                        Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula
-                        elementum sed sit amet dui. Sed porttitor lectus nibh.
-                    </p>
-                </div>
-            </div>
-            <div className="question">
-                <h4>Different Payment Methods</h4>
-                <div className="answer">
-                    <p>
-                        Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula
-                        elementum sed sit amet dui. Sed porttitor lectus nibh.
-                    </p>
-                </div>
-            </div>
-            <div className="question">
-                <h4>What products do you offer?</h4>
-                <div className="answer">
-                    <p>
-                        Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula
-                        elementum sed sit amet dui. Sed porttitor lectus nibh.
-                    </p>
-                </div>
-            </div>
-        </div>
+            <AnimateSharedLayout>
+                <Toggle title="How Do I Start.">
+                        <div className="answer">
+                            <p>
+                                Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula
+                                elementum sed sit amet dui. Sed porttitor lectus nibh.
+                            </p>
+                        </div>
+                </Toggle>
+                <Toggle title="Dayli Schedule.">
+                        <div className="answer">
+                            <p>
+                                Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula
+                                elementum sed sit amet dui. Sed porttitor lectus nibh.
+                            </p>
+                        </div>
+                </Toggle>
+                <Toggle title="Different Payment Methods.">
+                        <div className="answer">
+                            <p>
+                                Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula
+                                elementum sed sit amet dui. Sed porttitor lectus nibh.
+                            </p>
+                        </div>
+                </Toggle>
+                <Toggle title="What Product Do You Offer.">
+                        <div className="answer">
+                            <p>
+                                Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula
+                                elementum sed sit amet dui. Sed porttitor lectus nibh.
+                            </p>
+                        </div>
+                </Toggle>
+            </AnimateSharedLayout>
+        </StyledFAQ>
     )
 }
 
+const StyledFAQ = styled(StyledAbout)`
+    display: block;
+    span{
+        display: block;
+    }
+    h2{
+        padding-bottom: 2rem;
+        font-weight: lighter;
+    }
+    .faq-line{
+        background: #cccccc;
+        height: 0.2rem;
+        margin: 2rem 0rem;
+        width: 100%;
+    }
+    .question{
+        padding: 3rem 0rem;
+        cursor: pointer;
+    }
+    .answer{
+        padding: 2rem 0rem;
+    }
+    .p{
+        padding: 1rem 0rem;
+    }
+`;
 export default FaqSection;

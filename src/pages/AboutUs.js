@@ -3,15 +3,19 @@ import React from 'react'
 import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
 import FaqSection from '../components/FaqSection';
+//import Framer Motion
+import {motion} from 'framer-motion';
+//animation.js
+import {pageAnimation} from '../animation';
 
 
 const AboutUs = () => {
     return (
-        <div>
+        <motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
             <AboutSection />
             <ServicesSection />
             <FaqSection />
-        </div>
+        </motion.div>
     );
 }
 
