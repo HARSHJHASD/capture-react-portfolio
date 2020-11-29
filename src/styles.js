@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import {motion} from 'framer-motion';
 
-export const StyledAbout = styled.div`
+export const StyledAbout = styled(motion.div)`
     min-height: 90vh;
     display: flex;
     align-items: center;
@@ -16,7 +17,12 @@ export const StyledDescription = styled.div`
     h2{
         font-weight: lighter;
     }
-
+    @media (max-width: 1300px) {
+        padding: 0;
+        button {
+            margin: 2rem 0rem 5rem 0rem;
+        }
+    }
 `;
 
  export const StyledImage = styled.div`

@@ -1,6 +1,4 @@
 import React from 'react';
-//import pages
-import AboutUs from '../pages/AboutUs';
 //import styled components
 import styled from 'styled-components';
 //import from styles
@@ -9,10 +7,20 @@ import {StyledAbout} from '../styles'
 import Toggle from './toggle';
 //import AnimateSharedLayout
 import {AnimateSharedLayout} from 'framer-motion';
+//Import useScroll
+import {useScroll} from './useScroll';
+//Import scrollReveal
+import {fade} from '../animation';
 
 const FaqSection = () => {
+    const [element, controls] = useScroll();
     return (
-        <StyledFAQ>
+        <StyledFAQ
+            variants={fade}
+            initial="hidden"
+            animate={controls}
+            ref={element}
+        >
             <h2>Any Questions <span>FAQ</span></h2>
             <AnimateSharedLayout>
                 <Toggle title="How Do I Start.">
@@ -49,8 +57,8 @@ const FaqSection = () => {
                 </Toggle>
             </AnimateSharedLayout>
         </StyledFAQ>
-    )
-}
+    );
+};
 
 const StyledFAQ = styled(StyledAbout)`
     display: block;
@@ -73,9 +81,9 @@ const StyledFAQ = styled(StyledAbout)`
     }
     .answer{
         padding: 2rem 0rem;
-    }
-    .p{
+        .p{
         padding: 1rem 0rem;
+    }
     }
 `;
 export default FaqSection;

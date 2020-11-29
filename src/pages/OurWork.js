@@ -10,9 +10,14 @@ import {Link} from 'react-router-dom';
 //import Framer Motion
 import {motion} from 'framer-motion';
 //animation.js
-import {pageAnimation, slider, slideContainer, fade, photoAnim, lineAnim} from '../animation';
+import {pageAnimation, slider, sliderContainer, fade, photoAnim, lineAnim} from '../animation';
+import {useScroll} from '../components/useScroll';
+//import ScrollTop
+import ScrollTop from '../components/scrollTop';
 
 const OurWork = () => {
+    const [element, controls] = useScroll();
+    const [element2, controls2] = useScroll();
     return (
         <StyledWork
             variants={pageAnimation}
@@ -21,7 +26,7 @@ const OurWork = () => {
             exit="exit"
             style={{background: '#fff'}}
         >
-            <motion.div variants={slideContainer}>
+            <motion.div variants={sliderContainer}>
                 <Frame1 variants={slider}> </Frame1>
                 <Frame2 variants={slider}> </Frame2>
                 <Frame3 variants={slider}> </Frame3>
@@ -36,20 +41,21 @@ const OurWork = () => {
                     </Hide>
                 </Link>
             </StyledMovie>
-            <StyledMovie>
+            <StyledMovie variants={fade} ref={element} animate={controls} initial="hidden">
                 <motion.h2 variants={fade}>The Racer</motion.h2>
-                <motion.div className="line"></motion.div>
+                <motion.div variants={lineAnim} className="line"></motion.div>
                 <Link to="/work/the-racer">
                     <motion.img variants={photoAnim} src={theracer} alt="theracer" />
                 </Link>
             </StyledMovie>
-            <StyledMovie>
+            <StyledMovie variants={fade} ref={element2} animate={controls2} initial="hidden">
                 <motion.h2>Good Times</motion.h2>
-                <motion.div className="line"></motion.div>
+                <motion.div variants={lineAnim} className="line"></motion.div>
                 <Link to="/work/good-times">
                     <motion.img variants={photoAnim} src={goodtimes} alt="goodtimes" />
                 </Link>
             </StyledMovie>
+            <ScrollTop />
         </StyledWork>
     );
 };
@@ -63,7 +69,7 @@ const StyledWork = styled(motion.div)`
     }
 `;
 
-const StyledMovie = styled.div`
+const StyledMovie = styled(motion.div)`
     padding-bottom: 10rem;
     .line{
         height: 0.5rem;
